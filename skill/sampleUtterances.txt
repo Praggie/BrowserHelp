@@ -1,0 +1,25 @@
+BrowserNavigator please {Item}
+BrowserNavigator will you {Item}
+BrowserNavigator {Item} please
+BrowserNavigator I would like to {Item}
+BrowserNavigator I'd like to {Item}
+BrowserNavigator to {Item}
+
+SearchWithGoogle open google
+SearchWithGoogle load google
+SearchWithGoogle search with google
+SearchWithGoogle google
+
+OpenLink select link {Number}
+OpenLink open link {Number}
+OpenLink visit link {Number}
+OpenLink load link {Number}
+OpenLink go to link {Number}
+OpenLink navigate to link {Number}
+OpenLink select link {Number} please
+OpenLink open link {Number} please
+OpenLink visit link {Number} please
+OpenLink load link {Number} please
+OpenLink go to link {Number} please
+OpenLink navigate to link {Number} please
+

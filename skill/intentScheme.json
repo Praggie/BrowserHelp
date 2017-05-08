@@ -1,0 +1,10 @@
+{"intents": [
+    {"intent": "BrowserNavigator", "slots": [{"name" : "Item", "type": "LIST_OF_ITEMS"}]},
+    {"intent": "SearchWithGoogle"},
+    {"intent": "OpenLink", "slots": [{"name" : "Number", "type": "AMAZON.NUMBER"}]},
+    {"intent": "AMAZON.RepeatIntent"},
+    {"intent": "AMAZON.HelpIntent"},
+    {"intent": "AMAZON.StopIntent"},
+    {"intent": "AMAZON.CancelIntent"}
+  ]
+}

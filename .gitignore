@@ -1,0 +1,4 @@
+theGame/
+server/node_modules
+test.js
+*.zip
