@@ -12,7 +12,8 @@ BrowserHelp allows you to control your browser and navigate solely by voice, usi
 - simulate relevant button presses, such as enter or spacebar
 
 ## Demo
-[![Demo](https://github.com/BerioFlow/BrowserHelp/blob/master/images/demo.png)](https://www.youtube.com/watch?v=zGn1Kkma1p4)
+View the demo here:
+https://www.youtube.com/watch?v=zGn1Kkma1p4
 
 
 ## Setup
