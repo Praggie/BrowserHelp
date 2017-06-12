@@ -1,0 +1,161 @@
+<!-- alternative: https://codepen.io/colorlib/pen/rxddKy -->
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Alexa BrowserHelp</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="/css/style.css">
+
+  
+</head>
+
+<body>
+  
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1>Alexa BrowserHelp</h1><!-- <span>Pen <i class='fa fa-paint-brush'></i> + <i class='fa fa-code'></i> by <a href='http://andytran.me'>Andy Tran</a></span> -->
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    <div class="tooltip">Click Me</div>
+  </div>
+  <div class="form">
+    <h2>Sync with your Alexa Skill</h2>
+    <form>
+      <p>This extension works together with the Alexa BrowserHelp skill, which you can find in the <a href='https://www.amazon.com/b?ie=UTF8&node=13727921011'>Amazon Alexa Marketplace</a>. To sync your installed skill with this extension, use the Login with Amazon button below.</p>
+<!--       <input type="text" placeholder="Username"/>
+      <input type="password" placeholder="Password"/> -->
+      <!-- <button id="test">Login</button> -->
+      <a href="#" id="LoginWithAmazon">
+        <img border="0" alt="Login with Amazon"
+          src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
+          width="156" height="32" />
+      </a>
+      <!-- <a id="Logout">Logout</a> -->
+      <div id="amazon-root"></div>
+    </form>
+  </div>
+  <div class="form">
+    <h2 id="loginName">Login Successful!</h2>
+    <form>
+      <p>If you have also installed the Alexa BrowserHelp skill, you should now be good to go and you can close this tab, or visit the <a href="#" id="options">options page</a> to set your favourite sites</p>
+<!--       <input type="text" placeholder="Username"/>
+      <input type="password" placeholder="Password"/>
+      <input type="email" placeholder="Email Address"/>
+      <input type="tel" placeholder="Phone Number"/>
+      <button>Register</button> -->
+    </form>
+  </div><!-- 
+  <div class="cta"><a href="http://andytran.me">Forgot your password?</a></div> -->
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script type='text/javascript'>
+    (function() {
+      var button, buttonStyles, materialIcons;
+
+      materialIcons = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
+
+      buttonStyles = '<link href="https://codepen.io/andytran/pen/vLmRVp.css" rel="stylesheet">';
+
+      // button = '<a href="http://andytran.me" class="at-button"><i class="material-icons">link</i></a>';
+
+      document.body.innerHTML += materialIcons + buttonStyles; // + button
+
+    }).call(this);
+
+    // Toggle Function
+    $('.toggle').click(function(){
+      // Switches the Icon
+      $(this).children('i').toggleClass('fa-pencil');
+      // Switches the forms  
+      $('.form').animate({
+        height: "toggle",
+        'padding-top': 'toggle',
+        'padding-bottom': 'toggle',
+        opacity: "toggle"
+      }, "slow");
+    });
+  </script>
+
+
+  <script type="text/javascript">
+
+     window.onAmazonLoginReady = function() {
+       amazon.Login.setClientId('amzn1.application-oa2-client.bc21b7622d47498ba29d417c5ac2cf38');
+     };
+     (function(d) {
+       var a = d.createElement('script'); a.type = 'text/javascript';
+       a.async = true; a.id = 'amazon-login-sdk';
+       a.src = 'https://api-cdn.amazon.com/sdk/login1.js';
+       d.getElementById('amazon-root').appendChild(a);
+     })(document);
+
+  </script>
+
+  <script type="text/javascript">
+      document.getElementById('LoginWithAmazon').onclick = function() {
+         setTimeout(window.doLogin, 1);
+         return false;
+      };
+      document.getElementById("options").addEventListener("click", function(event){
+          event.preventDefault()
+          console.log('opening options page from server');
+          var event = new CustomEvent('options', { 'detail': 'options'});
+          document.dispatchEvent(event);
+      });
+      window.doLogin = function() {
+        options = {};
+        options.scope = 'profile';
+        amazon.Login.authorize(options, function(response) {
+           if ( response.error ) {
+               alert('oauth error ' + response.error);
+           return;
+           }
+           amazon.Login.retrieveProfile(response.access_token, function(response) {
+              var welcome = "Welcome, " + response.profile.Name + "!"; 
+              document.getElementById("loginName").innerHTML=welcome; 
+              // alert('Hello, ' + response.profile.Name);
+              // alert('Your e-mail address is ' + response.profile.PrimaryEmail);
+              // alert('Your unique ID is ' + response.profile.CustomerId);
+
+              // Communicate message to content script
+              var event = new CustomEvent('mail', { 'detail': response.profile.PrimaryEmail});
+              document.dispatchEvent(event);
+
+              // Switches the Icon
+              // $(this).children('i').toggleClass('fa-pencil');
+              // Switches the forms  
+              // $('.form').animate({
+              //   height: "toggle",
+              //   'padding-top': 'toggle',
+              //   'padding-bottom': 'toggle',
+              //   opacity: "toggle"
+              // }, "slow");
+
+              if ( window.console && window.console.log )
+                window.console.log(response);
+           });
+       });
+      };
+   </script> 
+
+<!--    <script type="text/javascript">
+     document.getElementById('test').onclick = function() {
+       // amazon.Login.logout();
+       // var event = new CustomEvent('mail', { 'detail': response.profile.PrimaryEmail});
+       // document.dispatchEvent(event);
+   };
+   </script> -->
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alexa BrowserHelp - Voice control of your Chrome browser via your Amazon Echo </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  
+  <link rel="stylesheet" href="/public/css/style.css">
+
+  
+</head>
+
+<body>
+
+
+<div class="pen-title">
+  <h1>Alexa BrowserHelp</h1><!-- <span>Pen <i class='fa fa-paint-brush'></i> + <i class='fa fa-code'></i> by <a href='http://andytran.me'>Andy Tran</a></span> -->
+  <h3><i>Full voice control of your Chrome browser via your Amazon Echo</i></h3>
+</div>
+
+
+<!-- Cards style from: https://codepen.io/mcraiganthony/pen/NxGxqm -->
+<ul class="cards">
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--river" id="demo">
+ <!--        <iframe frameborder="0" src="https://www.youtube.com/watch?v=zGn1Kkma1p4">
+        </iframe> -->
+        <embed src="https://www.youtube.com/v/zGn1Kkma1p4?version=3&amp;hl=en_US&amp;rel=0&amp;autohide=1" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
+      </div>
+      <div class="card__content">
+        <div class="card__title">The Idea</div>
+        <p class="card__text">Browserhelp was created with the idea to make the web more accessible for the impaired, and allows anyone to control their Chrome browser by voice interaction with an Amazon Echo. To start using the skill, enable the Alexa skill and Chrome extension. The source code can be viewed <a href='https://github.com/BerioFlow/BrowserHelp'>here</a></span>  on Github</p>
+        <!-- <button class="btn btn--block card__btn">Button</button> -->
+      </div>
+    </div>
+  </li>
+
+  <li class="cards__item">
+    <div class="card" onclick="location.href='https://www.amazon.com/dp/B0711BN7SG/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1497180614&sr=1-1&keywords=browserhelp';">
+      <div class="card__image card__image--fence"></div>
+      <div class="card__content">
+        <div class="card__title">BrowserHelp Alexa Skill</div>
+        <p class="card__text">Enable the skill through the skills marketplace, and select Account Linking to match your skill with the Chrome extension</p>
+<!--         <button class="btn btn--block card__btn">Get the skill</button> -->
+      </div>
+    </div>
+  </li>
+  
+  <li class="cards__item">
+    <div class="card" onclick="location.href='https://chrome.google.com/webstore/detail/alexa-browserhelp/jjjjekfmojknabiflakbmnmapkkmefbe';">
+      <div class="card__image card__image--record"></div>
+      <div class="card__content">
+        <div class="card__title">BrowserHelp Chrome Extension</div>
+        <p class="card__text">Add the Chrome extension to your browser, and follow the instructions</p>
+        <!-- <button class="btn btn--block card__btn">Get the extension</button> -->
+      </div>
+    </div>
+  </li>
+  <!-- <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--flowers"></div>
+      <div class="card__content">
+        <div class="card__title">Flex Basis</div>
+        <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
+        <button class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li> -->
+</ul>
+  
+<script>
+  $(function() {
+      var div = $('#demo');
+      var width = div.width();
+      var height = width / 1.5;
+      div.css('height', height);
+  });
+</script>
+  
+</body>
+</html>
