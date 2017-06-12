@@ -12,12 +12,13 @@ BrowserHelp allows you to control your browser and navigate solely by voice, usi
 - simulate relevant button presses, such as enter or spacebar
 
 ## Demo
-[![Demo](https://github.com/BerioFlow/BrowserHelp/blob/master/images/demo.png)](https://www.youtube.com/watch?v=zGn1Kkma1p4)
+View the demo here:
+https://www.youtube.com/watch?v=zGn1Kkma1p4
 
 
 ## Setup
 
-**UPDATE: Currently, an updated version including account linking is going through beta testing and skill certification. If you are just interested in trying out the skill, download the [Alexa BrowserHelp](https://chrome.google.com/webstore/detail/alexa-browserhelp/jjjjekfmojknabiflakbmnmapkkmefbe) extension via the Chrome Web Store and contact me to receive an invitation link to try out the skill as Beta tester**
+**UPDATE: The skill and Chrome extension are currently live. Download the [BrowserHelp Skill](https://www.amazon.com/dp/B0711BN7SG/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1497191443&sr=1-1&keywords=browserhelp) from Amazon's Alexa Skills Marketplace and the [Alexa BrowserHelp](https://chrome.google.com/webstore/detail/alexa-browserhelp/jjjjekfmojknabiflakbmnmapkkmefbe) extension via the Chrome Web Store**
 
 To install the skill, follow the following steps:
 1. Deploy the server on any platform, and enable https
