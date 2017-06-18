@@ -13,7 +13,7 @@ BrowserHelp allows you to control your browser and navigate solely by voice, usi
 
 ## Demo
 View the demo here:
-https://www.youtube.com/watch?v=zGn1Kkma1p4
+https://www.youtube.com/watch?v=EWi6ej_2dp4
 
 
 ## Setup
